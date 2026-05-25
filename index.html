@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Habana Studios — Tropical Graduation Portraits in Gainesville, FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F4EAD5;
+    --sand-deep: #E8D9B7;
+    --ivory: #FBF6EA;
+    --jungle: #1E4738;
+    --jungle-deep: #112B22;
+    --palm: #3D6E5C;
+    --coral: #E76F4E;
+    --coral-deep: #C0492A;
+    --turquoise: #5DA9A1;
+    --gold: #E0A95E;
+    --sunset: #F2C58A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--sand);
+    color: var(--jungle);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.10 0 0 0 0 0.08 0 0 0 0.30 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===================== PALM FRONDS ===================== */
+  .palm-frond {
+    position: absolute;
+    width: 280px;
+    height: auto;
+    color: var(--palm);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .palm-frond.tr {
+    top: 70px;
+    right: -60px;
+    width: 300px;
+    aspect-ratio: 200/350;
+    --base-rotate: rotate(35deg);
+    transform: var(--base-rotate);
+    animation: sway 8s ease-in-out infinite;
+  }
+
+  .palm-frond.bl {
+    bottom: -40px;
+    left: -80px;
+    width: 320px;
+    aspect-ratio: 200/350;
+    --base-rotate: rotate(-145deg);
+    transform: var(--base-rotate);
+    animation: sway 9s ease-in-out infinite 1s;
+  }
+
+  .palm-frond.contact-r {
+    top: 40px;
+    right: -90px;
+    width: 280px;
+    aspect-ratio: 200/350;
+    transform: rotate(45deg);
+    color: var(--coral);
+    opacity: 0.13;
+  }
+
+  /* ===================== NAVIGATION ===================== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 0;
+    background: rgba(244, 234, 213, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(30, 71, 56, 0.1);
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+  }
+
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--jungle);
+  }
+
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .logo em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--coral);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--jungle);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--coral);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--coral); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--jungle);
+    color: var(--sand);
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta:hover {
+    background: var(--coral);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 0 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-sun {
+    position: absolute;
+    top: 8%;
+    right: 38%;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--sunset) 0%, var(--gold) 35%, var(--coral) 65%, transparent 75%);
+    opacity: 0.32;
+    filter: blur(35px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-sun { width: 320px; height: 320px; right: 5%; top: 12%; }
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--palm);
+    margin-bottom: 28px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--coral);
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 8vw, 110px);
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+    color: var(--jungle);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.4s forwards;
+  }
+
+  .hero h1 .accent {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 300;
+  }
+
+  .hero h1 .underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero h1 .underline svg {
+    position: absolute;
+    bottom: -0.12em;
+    left: -2%;
+    width: 104%;
+    height: 0.3em;
+    stroke: var(--coral);
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 250;
+    stroke-dashoffset: 250;
+    animation: drawWave 1.5s ease 1.2s forwards;
+  }
+
+  .hero p.lead {
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.65;
+    color: var(--jungle-deep);
+    max-width: 480px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+
+  .btn-primary {
+    background: var(--coral);
+    color: var(--ivory);
+    padding: 18px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(231, 111, 78, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--coral-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(192, 73, 42, 0.4);
+  }
+
+  .btn-secondary {
+    color: var(--jungle);
+    padding: 18px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1.5px solid var(--jungle);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: var(--jungle);
+    color: var(--sand);
+  }
+
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.5s forwards;
+  }
+
+  .photo-card {
+    position: absolute;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(17, 43, 34, 0.25);
+    background: var(--sand-deep);
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-main {
+    inset: 0;
+    z-index: 2;
+    transform: rotate(-2deg);
+  }
+
+  .photo-accent {
+    width: 45%;
+    aspect-ratio: 3/4;
+    bottom: -8%;
+    right: -8%;
+    z-index: 3;
+    transform: rotate(5deg);
+    border: 8px solid var(--ivory);
+  }
+
+  .photo-tape {
+    position: absolute;
+    top: 12%;
+    left: -6%;
+    z-index: 4;
+    background: var(--ivory);
+    padding: 14px 18px 10px;
+    box-shadow: 0 8px 20px rgba(17, 43, 34, 0.15);
+    transform: rotate(-8deg);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--jungle);
+    border-radius: 2px;
+  }
+
+  .photo-tape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(8deg);
+    width: 50px;
+    height: 18px;
+    background: rgba(231, 111, 78, 0.3);
+    border-radius: 2px;
+  }
+
+  .hero-meta {
+    position: absolute;
+    bottom: 60px;
+    right: clamp(20px, 5vw, 60px);
+    text-align: right;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--palm);
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeUp 1s ease 1s forwards;
+    z-index: 5;
+  }
+
+  .hero-meta strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    text-transform: none;
+    letter-spacing: 0;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--jungle);
+    font-weight: 400;
+  }
+
+  @media (max-width: 900px) {
+    .hero-meta { display: none; }
+  }
+
+  /* ===================== MARQUEE ===================== */
+  .marquee {
+    background: var(--jungle);
+    color: var(--sand);
+    padding: 28px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 3;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 60px;
+    animation: scroll 40s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .marquee-item {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    font-style: italic;
+  }
+
+  .marquee-item .flower {
+    color: var(--coral);
+    font-style: normal;
+    font-size: 22px;
+  }
+
+  /* ===================== ABOUT ===================== */
+  .about {
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+  }
+
+  .about-image {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-image::after {
+    content: '';
+    position: absolute;
+    inset: -20px -20px 20px 20px;
+    border: 1px solid var(--coral);
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--palm);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--coral);
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    color: var(--jungle);
+  }
+
+  .section-title em {
+    color: var(--coral);
+    font-weight: 300;
+  }
+
+  .about p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--jungle-deep);
+    margin-bottom: 20px;
+    max-width: 560px;
+    opacity: 0.92;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(30, 71, 56, 0.18);
+  }
+
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--coral);
+    line-height: 1;
+    font-style: italic;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--palm);
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  .signature-quote {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--palm);
+    margin-top: 32px;
+    padding-left: 24px;
+    border-left: 2px solid var(--coral);
+    line-height: 1.5;
+  }
+
+  /* ===================== GALLERY ===================== */
+  .gallery {
+    padding: 100px 0 140px;
+    position: relative;
+  }
+
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .gallery-header p {
+    max-width: 380px;
+    color: var(--jungle-deep);
+    opacity: 0.85;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 80px;
+    gap: 16px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--sand-deep);
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+    filter: saturate(1.15);
+  }
+
+  .gallery-item .caption {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    color: var(--ivory);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.4s ease;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    z-index: 2;
+  }
+
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17,43,34,0.6), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .gallery-item:hover .caption,
+  .gallery-item:hover::after { opacity: 1; }
+  .gallery-item:hover .caption { transform: translateY(0); }
+
+  .g1 { grid-column: span 5; grid-row: span 6; }
+  .g2 { grid-column: span 4; grid-row: span 4; }
+  .g3 { grid-column: span 3; grid-row: span 5; }
+  .g4 { grid-column: span 3; grid-row: span 4; }
+  .g5 { grid-column: span 4; grid-row: span 5; }
+  .g6 { grid-column: span 5; grid-row: span 4; }
+
+  @media (max-width: 900px) {
+    .gallery-grid {
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 100px;
+    }
+    .g1 { grid-column: span 6; grid-row: span 4; }
+    .g2 { grid-column: span 3; grid-row: span 3; }
+    .g3 { grid-column: span 3; grid-row: span 3; }
+    .g4 { grid-column: span 3; grid-row: span 3; }
+    .g5 { grid-column: span 3; grid-row: span 3; }
+    .g6 { grid-column: span 6; grid-row: span 3; }
+  }
+
+  /* ===================== PRICING ===================== */
+  .pricing {
+    padding: 130px 0 140px;
+    background: var(--jungle);
+    color: var(--sand);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .pricing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.95 0 0 0 0 0.85 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .pricing-sun {
+    position: absolute;
+    top: -200px;
+    left: -150px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(231, 111, 78, 0.20) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .pricing-palm {
+    position: absolute;
+    color: var(--sand);
+    opacity: 0.07;
+    pointer-events: none;
+    height: auto;
+  }
+
+  .pricing-palm.tr {
+    top: 60px;
+    right: -80px;
+    width: 320px;
+    aspect-ratio: 200/350;
+    transform: rotate(45deg);
+  }
+
+  .pricing-palm.bl {
+    bottom: -80px;
+    left: -100px;
+    width: 380px;
+    aspect-ratio: 200/350;
+    transform: rotate(-145deg);
+  }
+
+  .pricing .section-eyebrow {
+    color: rgba(244, 234, 213, 0.6);
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 4;
+  }
+
+  .pricing-header .section-eyebrow {
+    justify-content: center;
+  }
+
+  .pricing .section-title { color: var(--sand); }
+  .pricing .section-title em { color: var(--coral); }
+
+  .pricing-subtitle {
+    color: rgba(244, 234, 213, 0.75);
+    font-size: 17px;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 4;
+  }
+
+  @media (max-width: 900px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+
+  .price-card {
+    background: rgba(244, 234, 213, 0.04);
+    border: 1px solid rgba(244, 234, 213, 0.14);
+    padding: 40px 32px 36px;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(4px);
+  }
+
+  .price-card:hover {
+    background: rgba(244, 234, 213, 0.07);
+    border-color: var(--coral);
+    transform: translateY(-4px);
+  }
+
+  .price-card.featured {
+    background: linear-gradient(160deg, rgba(231, 111, 78, 0.22), rgba(244, 234, 213, 0.04));
+    border-color: var(--coral);
+  }
+
+  .price-tag {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--coral);
+    color: var(--ivory);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  .price-num {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    color: var(--sunset);
+    margin-bottom: 16px;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .price-name {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(244, 234, 213, 0.14);
+  }
+
+  .price-amount .currency {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--sunset);
+  }
+
+  .price-amount .amount {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 400;
+    color: var(--sand);
+    line-height: 1;
+  }
+
+  .price-features {
+    list-style: none;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+
+  .price-features li {
+    padding: 12px 0;
+    color: rgba(244, 234, 213, 0.88);
+    font-size: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid rgba(244, 234, 213, 0.07);
+  }
+
+  .price-features li:last-child { border-bottom: none; }
+
+  .price-features li::before {
+    content: '✿';
+    color: var(--coral);
+    font-size: 13px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .price-cta {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid var(--sand);
+    color: var(--sand);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+
+  .price-cta:hover {
+    background: var(--sand);
+    color: var(--jungle);
+  }
+
+  .price-card.featured .price-cta {
+    background: var(--coral);
+    border-color: var(--coral);
+  }
+
+  .price-card.featured .price-cta:hover {
+    background: var(--sand);
+    color: var(--coral-deep);
+    border-color: var(--sand);
+  }
+
+  /* ===================== CONTACT ===================== */
+  .contact {
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-decoration {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(231, 111, 78, 0.14), transparent 70%);
+    pointer-events: none;
+  }
+
+  .contact-decoration-2 {
+    position: absolute;
+    bottom: -120px;
+    left: -120px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(93, 169, 161, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  }
+
+  .contact h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+    color: var(--jungle);
+  }
+
+  .contact h2 em {
+    color: var(--coral);
+    font-weight: 300;
+  }
+
+  .contact p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--jungle-deep);
+    opacity: 0.88;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .phone-display {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--jungle);
+    padding: 32px 40px;
+    background: var(--ivory);
+    border-radius: 8px;
+    border: 1px solid rgba(30, 71, 56, 0.1);
+    box-shadow: 0 8px 24px rgba(17, 43, 34, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .phone-display:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(17, 43, 34, 0.14);
+    border-color: var(--coral);
+  }
+
+  .phone-label {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--palm);
+    font-weight: 500;
+  }
+
+  .phone-number {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+
+  .contact-card {
+    background: var(--ivory);
+    padding: 48px 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(30, 71, 56, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--coral);
+    opacity: 0.12;
+  }
+
+  .contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-style: italic;
+    color: var(--jungle);
+    position: relative;
+  }
+
+  .contact-card .subtitle {
+    color: var(--palm);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .contact-info { list-style: none; }
+
+  .contact-info li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(30, 71, 56, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-info li:last-child { border-bottom: none; }
+
+  .contact-info .label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--palm);
+    font-weight: 500;
+  }
+
+  .contact-info .value {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--jungle);
+  }
+
+  .contact-info .value em {
+    font-style: italic;
+    color: var(--coral);
+  }
+
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: var(--jungle-deep);
+    color: var(--sand);
+    padding: 60px 0 30px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .footer-palm {
+    position: absolute;
+    bottom: -40px;
+    right: -60px;
+    width: 240px;
+    aspect-ratio: 200/350;
+    color: var(--palm);
+    opacity: 0.15;
+    transform: rotate(35deg);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(244, 234, 213, 0.14);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-logo em {
+    font-style: italic;
+    color: var(--coral);
+  }
+
+  .footer-tagline {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(244, 234, 213, 0.75);
+    max-width: 340px;
+    text-align: right;
+  }
+
+  @media (max-width: 700px) {
+    .footer-tagline { text-align: left; }
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: rgba(244, 234, 213, 0.55);
+    letter-spacing: 0.04em;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===================== ANIMATIONS ===================== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes drawWave { to { stroke-dashoffset: 0; } }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: var(--base-rotate) translateY(0); }
+    50% { transform: var(--base-rotate) translateY(-8px); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- Reusable SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="palm-frond" viewBox="0 0 200 350">
+    <g fill="currentColor">
+      <rect x="98" y="20" width="3" height="320" rx="1.5"/>
+      <ellipse cx="60" cy="295" rx="42" ry="9" transform="rotate(-22 60 295)"/>
+      <ellipse cx="48" cy="255" rx="48" ry="9" transform="rotate(-28 48 255)"/>
+      <ellipse cx="38" cy="215" rx="52" ry="8" transform="rotate(-34 38 215)"/>
+      <ellipse cx="32" cy="175" rx="55" ry="7" transform="rotate(-40 32 175)"/>
+      <ellipse cx="34" cy="135" rx="52" ry="7" transform="rotate(-48 34 135)"/>
+      <ellipse cx="42" cy="95" rx="46" ry="6" transform="rotate(-56 42 95)"/>
+      <ellipse cx="58" cy="60" rx="38" ry="5" transform="rotate(-64 58 60)"/>
+      <ellipse cx="78" cy="32" rx="28" ry="4" transform="rotate(-72 78 32)"/>
+      <ellipse cx="140" cy="295" rx="42" ry="9" transform="rotate(22 140 295)"/>
+      <ellipse cx="152" cy="255" rx="48" ry="9" transform="rotate(28 152 255)"/>
+      <ellipse cx="162" cy="215" rx="52" ry="8" transform="rotate(34 162 215)"/>
+      <ellipse cx="168" cy="175" rx="55" ry="7" transform="rotate(40 168 175)"/>
+      <ellipse cx="166" cy="135" rx="52" ry="7" transform="rotate(48 166 135)"/>
+      <ellipse cx="158" cy="95" rx="46" ry="6" transform="rotate(56 158 95)"/>
+      <ellipse cx="142" cy="60" rx="38" ry="5" transform="rotate(64 142 60)"/>
+      <ellipse cx="122" cy="32" rx="28" ry="4" transform="rotate(72 122 32)"/>
+    </g>
+  </symbol>
+
+  <symbol id="logo-mark" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="8" fill="#E76F4E"/>
+    <g stroke="#E76F4E" stroke-width="1.6" stroke-linecap="round">
+      <line x1="20" y1="3" x2="20" y2="8"/>
+      <line x1="20" y1="32" x2="20" y2="37"/>
+      <line x1="3" y1="20" x2="8" y2="20"/>
+      <line x1="32" y1="20" x2="37" y2="20"/>
+      <line x1="8" y1="8" x2="11.5" y2="11.5"/>
+      <line x1="28.5" y1="28.5" x2="32" y2="32"/>
+      <line x1="32" y1="8" x2="28.5" y2="11.5"/>
+      <line x1="11.5" y1="28.5" x2="8" y2="32"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span>Habana <em>Studios</em></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Work</a></li>
+      <li><a href="#pricing">Sessions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+17868129001" class="nav-cta">Book a Session</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-sun"></div>
+  <svg class="palm-frond tr" aria-hidden="true"><use href="#palm-frond"/></svg>
+  <svg class="palm-frond bl" aria-hidden="true"><use href="#palm-frond"/></svg>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">✿ Gainesville · Florida</div>
+        <h1>
+          Your <span class="accent">graduation</span><br/>
+          deserves a <span class="underline">portrait<svg viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2,8 Q50,2 100,8 T198,8" /></svg></span>.
+        </h1>
+        <p class="lead">
+          Hi, I'm Mara — a passionate photographer capturing the milestones of UF and Santa Fe College students against the campuses they earned. Tropical golden hour, real moments, photos worth framing.
+        </p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn-primary">View Sessions →</a>
+          <a href="#gallery" class="btn-secondary">See the Work</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="photo-card photo-main">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" alt="Graduate in cap and gown" />
+        </div>
+        <div class="photo-card photo-accent">
+          <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=600&q=80" alt="Campus portrait detail" />
+        </div>
+        <div class="photo-tape">since 2020 · Gainesville, FL</div>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      Now booking<br/>
+      <strong>Spring 2026</strong>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Graduation Portraits <span class="flower">✿</span> University of Florida <span class="flower">✿</span> Santa Fe College <span class="flower">✿</span> Family Sessions <span class="flower">✿</span> Gainesville, FL <span class="flower">✿</span></span>
+    <span class="marquee-item">Graduation Portraits <span class="flower">✿</span> University of Florida <span class="flower">✿</span> Santa Fe College <span class="flower">✿</span> Family Sessions <span class="flower">✿</span> Gainesville, FL <span class="flower">✿</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80" alt="Mara behind the camera" />
+      </div>
+      <div class="reveal">
+        <div class="section-eyebrow">Behind the lens</div>
+        <h2 class="section-title">
+          I'm Mara — and I photograph<br/>
+          the chapters <em>worth keeping.</em>
+        </h2>
+        <p>
+          For five years I've been chasing golden hour around Gainesville, learning faces, learning light, learning how to make people feel themselves in front of a camera. I'm currently finishing my degree in photography, which means I bring the discipline of a student and the heart of a friend to every shoot.
+        </p>
+        <p>
+          My specialty is graduates — UF alumni in front of Century Tower, Santa Fe students on campus paths, families gathering for the moment everyone worked toward together. But honestly? I'm here to make anyone in this town happy with the photos they came to me for.
+        </p>
+
+        <p class="signature-quote">
+          "The goal isn't a perfect photo — it's a real one you'll still love in twenty years."
+        </p>
+
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">5</div>
+            <div class="stat-label">Years Shooting</div>
+          </div>
+          <div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">Languages · EN/ES</div>
+          </div>
+          <div>
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Smiles Captured</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div>
+        <div class="section-eyebrow">Selected work</div>
+        <h2 class="section-title">A few <em>favorites</em>.</h2>
+      </div>
+      <p>A small look at recent sessions — graduates, friends, families, and afternoons spent moving through Gainesville with the camera.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g1 reveal">
+        <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=900&q=80" alt="Graduation portrait" />
+        <div class="caption">UF Class of '25 · Plaza of the Americas</div>
+      </div>
+      <div class="gallery-item g2 reveal">
+        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&q=80" alt="Cap toss" />
+        <div class="caption">The cap toss · Reitz Union</div>
+      </div>
+      <div class="gallery-item g3 reveal">
+        <img src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?w=600&q=80" alt="Campus walk" />
+        <div class="caption">Golden hour, campus walk</div>
+      </div>
+      <div class="gallery-item g4 reveal">
+        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80" alt="Diploma moment" />
+        <div class="caption">The diploma · Santa Fe College</div>
+      </div>
+      <div class="gallery-item g5 reveal">
+        <img src="https://images.unsplash.com/photo-1608500218890-c4f9019eaa70?w=700&q=80" alt="Family session" />
+        <div class="caption">Family session · afternoon light</div>
+      </div>
+      <div class="gallery-item g6 reveal">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80" alt="Portrait" />
+        <div class="caption">Portrait, Newberry Road</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-sun"></div>
+  <svg class="pricing-palm tr" aria-hidden="true"><use href="#palm-frond"/></svg>
+  <svg class="pricing-palm bl" aria-hidden="true"><use href="#palm-frond"/></svg>
+
+  <div class="container">
+    <div class="pricing-header reveal">
+      <div class="section-eyebrow">Sessions & rates</div>
+      <h2 class="section-title">Three ways to <em>celebrate.</em></h2>
+      <p class="pricing-subtitle">
+        Honest pricing, generous photo counts, and editing that makes the final files feel like the day you remember. Pick the package that fits your moment.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-num">No. 01</div>
+        <div class="price-name">The Quick Set</div>
+        <div class="price-amount">
+          <span class="currency">$</span>
+          <span class="amount">50</span>
+        </div>
+        <ul class="price-features">
+          <li>10 raw photos delivered</li>
+          <li>3 fully edited final images</li>
+          <li>Single-location session</li>
+          <li>Personal-use rights included</li>
+          <li>Online gallery delivery</li>
+        </ul>
+        <a href="tel:+17868129001" class="price-cta">Book the Quick Set</a>
+      </div>
+
+      <div class="price-card featured reveal">
+        <div class="price-tag">Most Popular</div>
+        <div class="price-num">No. 02</div>
+        <div class="price-name">The Campus Session</div>
+        <div class="price-amount">
+          <span class="currency">$</span>
+          <span class="amount">150</span>
+        </div>
+        <ul class="price-features">
+          <li>20 raw photos delivered</li>
+          <li>10 fully edited final images</li>
+          <li>Shot at UF or Santa Fe College</li>
+          <li>Outfit change welcomed</li>
+          <li>Ideal for graduation portraits</li>
+          <li>Online gallery delivery</li>
+        </ul>
+        <a href="tel:+17868129001" class="price-cta">Book the Campus Session</a>
+      </div>
+
+      <div class="price-card reveal">
+        <div class="price-num">No. 03</div>
+        <div class="price-name">The Full Afternoon</div>
+        <div class="price-amount">
+          <span class="currency">$</span>
+          <span class="amount">250</span>
+        </div>
+        <ul class="price-features">
+          <li>50 raw photos delivered</li>
+          <li>20 fully edited final images</li>
+          <li>Multiple locations across town</li>
+          <li>Family & friends included</li>
+          <li>Full afternoon coverage</li>
+          <li>Priority gallery turnaround</li>
+        </ul>
+        <a href="tel:+17868129001" class="price-cta">Book the Afternoon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-decoration"></div>
+  <div class="contact-decoration-2"></div>
+  <svg class="palm-frond contact-r" aria-hidden="true"><use href="#palm-frond"/></svg>
+
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-eyebrow">Let's make it happen</div>
+        <h2>Call me — let's<br/>plan your <em>shoot.</em></h2>
+        <p>
+          The fastest way to lock in a date is a quick phone call. Tell me what you're celebrating, where you'd love to shoot, and which package fits — I'll handle the rest.
+        </p>
+        <a href="tel:+17868129001" class="phone-display">
+          <span class="phone-label">📞 Call or Text</span>
+          <span class="phone-number">(786) 812-9001</span>
+        </a>
+      </div>
+
+      <div class="contact-card reveal">
+        <h3>Studio details</h3>
+        <p class="subtitle">Habana Studios · Mara Ramos</p>
+        <ul class="contact-info">
+          <li>
+            <span class="label">Based In</span>
+            <span class="value">Gainesville, <em>Florida</em></span>
+          </li>
+          <li>
+            <span class="label">Specialties</span>
+            <span class="value">Graduations, Family, Portraits</span>
+          </li>
+          <li>
+            <span class="label">Languages</span>
+            <span class="value">English & <em>Español</em></span>
+          </li>
+          <li>
+            <span class="label">Booking</span>
+            <span class="value">By phone or text</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <svg class="footer-palm" aria-hidden="true"><use href="#palm-frond"/></svg>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg width="32" height="32" aria-hidden="true"><use href="#logo-mark"/></svg>
+        Habana <em>· Studios</em>
+      </div>
+      <div class="footer-tagline">
+        Photographing the milestones of Gainesville — one graduate, one family, one tropical golden hour at a time.
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Habana Studios · Mara Ramos · Gainesville, FL</div>
+      <div>(786) 812-9001 · By appointment</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
