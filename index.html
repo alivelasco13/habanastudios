@@ -87,30 +87,32 @@
 
   /* ── HERO ── */
   .hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 8rem 3rem 5rem;
+    min-height: 70vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 8rem 3rem 4rem;
     position: relative; overflow: hidden;
+    text-align: center;
   }
   .hero-sun {
-    position: absolute; top: 10%; right: 8%;
-    width: 420px; height: 420px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(224,169,94,0.35) 0%, rgba(242,197,138,0.12) 60%, transparent 100%);
+    position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,169,94,0.22) 0%, rgba(242,197,138,0.08) 60%, transparent 100%);
     pointer-events: none;
   }
-  .hero-content { max-width: 680px; position: relative; z-index: 1; }
+  .hero-content { max-width: 780px; position: relative; z-index: 1; }
   .hero-eyebrow {
     font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--coral);
     margin-bottom: 1.2rem;
-    display: flex; align-items: center; gap: 0.6rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
   }
   .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--coral); }
+  .hero-eyebrow::after { content: ''; display: block; width: 28px; height: 1px; background: var(--coral); }
   .hero-title {
     font-family: 'Fraunces', serif;
-    font-size: clamp(3rem, 6vw, 5.2rem);
+    font-size: clamp(3.2rem, 7vw, 6rem);
     font-weight: 400;
-    line-height: 1.08;
+    line-height: 1.05;
     color: var(--jungle);
     margin-bottom: 1.5rem;
     letter-spacing: -0.03em;
@@ -122,10 +124,10 @@
     width: 100%; height: 10px;
   }
   .hero-sub {
-    font-size: 1.05rem; line-height: 1.7;
-    color: var(--palm); max-width: 480px; margin-bottom: 2.5rem;
+    font-size: 1.1rem; line-height: 1.7;
+    color: var(--palm); max-width: 520px; margin: 0 auto 2.5rem;
   }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
   .btn-primary {
     background: var(--jungle); color: var(--sand);
     padding: 0.9rem 2rem; border-radius: 50px;
@@ -142,41 +144,8 @@
     transition: all 0.2s;
   }
   .btn-secondary:hover { background: var(--palm); color: var(--sand); transform: translateY(-2px); }
-  .hero-stats {
-    margin-top: 4rem;
-    display: flex; gap: 3rem;
-  }
-  .stat-num {
-    font-family: 'Fraunces', serif;
-    font-size: 2.2rem; font-weight: 500;
-    color: var(--jungle); line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.72rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--palm);
-    margin-top: 0.3rem;
-  }
-  .hero-img-col {
-    position: absolute; right: 3rem; top: 50%;
-    transform: translateY(-50%);
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem;
-    width: 420px;
-  }
-  .hero-img-card {
-    border-radius: 16px; overflow: hidden;
-    aspect-ratio: 3/4; background: var(--sand-deep);
-    position: relative;
-  }
-  .hero-img-card:nth-child(1) { margin-top: 2rem; }
-  .hero-img-card:nth-child(2) { margin-top: -1rem; }
-  .hero-img-card img { width: 100%; height: 100%; object-fit: cover; }
-  .img-tag {
-    position: absolute; bottom: 0.8rem; left: 0.8rem;
-    background: rgba(30,71,56,0.85); color: var(--sand);
-    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
-    text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 20px;
-    backdrop-filter: blur(4px);
-  }
+
+
 
   /* ── MARQUEE ── */
   .marquee-strip {
@@ -511,8 +480,7 @@
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .hero { padding: 7rem 1.5rem 4rem; flex-direction: column; }
-    .hero-img-col { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
     section { padding: 4rem 1.5rem; }
     .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .services-grid { grid-template-columns: 1fr; }
@@ -522,6 +490,38 @@
     .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
+
+  /* ── PORTFOLIO ── */
+  .portfolio { padding: 5rem 3rem; background: var(--sand); }
+  .portfolio-header { text-align: center; margin-bottom: 2.5rem; }
+  .portfolio-filters {
+    display: flex; gap: 0.6rem; justify-content: center;
+    flex-wrap: wrap; margin-top: 1.5rem;
+  }
+  .pf-btn {
+    padding: 0.5rem 1.3rem; border-radius: 50px;
+    border: 1.5px solid var(--palm); background: transparent;
+    color: var(--palm); font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .pf-btn.active, .pf-btn:hover {
+    background: var(--jungle); border-color: var(--jungle); color: var(--sand);
+  }
+  .portfolio-grid {
+    columns: 4; column-gap: 0.8rem; margin-top: 2rem;
+  }
+  .pf-item {
+    break-inside: avoid; margin-bottom: 0.8rem;
+    border-radius: 12px; overflow: hidden; position: relative;
+    cursor: pointer; transition: transform 0.2s;
+  }
+  .pf-item:hover { transform: scale(1.015); }
+  .pf-item img { width: 100%; display: block; }
+  .pf-item.hidden { display: none; }
+  @media (max-width: 900px) { .portfolio-grid { columns: 2; } }
+  @media (max-width: 500px) { .portfolio-grid { columns: 1; } }
+
 </style>
 </head>
 <body>
@@ -566,31 +566,9 @@
       <a href="#pricing" class="btn-primary">See Packages</a>
       <a href="#contact" class="btn-secondary">Get a Quote</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div>
-        <div class="stat-num">UF & SF</div>
-        <div class="stat-label">Campus Specialist</div>
-      </div>
-      <div>
-        <div class="stat-num">24hr</div>
-        <div class="stat-label">Response Time</div>
-      </div>
-    </div>
+
   </div>
-  <div class="hero-img-col">
-    <div class="hero-img-card">
-      <img src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?w=400&q=80" alt="Graduation portrait"/>
-      <div class="img-tag">Graduation</div>
-    </div>
-    <div class="hero-img-card">
-      <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=400&q=80" alt="Couples portrait"/>
-      <div class="img-tag">Couples</div>
-    </div>
-  </div>
+
 </section>
 
 <!-- MARQUEE -->
@@ -615,6 +593,47 @@
     <span>Gainesville · Newberry · Alachua</span><span class="dot">✿</span>
   </div>
 </div>
+
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header">
+    <p class="section-eyebrow">The Work</p>
+    <h2 class="section-title">A glimpse into <em>every milestone</em></h2>
+    <div class="portfolio-filters">
+      <button class="pf-btn active" data-filter="all">All</button>
+      <button class="pf-btn" data-filter="graduation">Graduation</button>
+      <button class="pf-btn" data-filter="couples">Couples</button>
+      <button class="pf-btn" data-filter="weddings">Weddings</button>
+      <button class="pf-btn" data-filter="family">Family</button>
+      <button class="pf-btn" data-filter="portraits">Portraits</button>
+    </div>
+  </div>
+  <div class="portfolio-grid" id="portfolioGrid">
+    <!-- Graduation -->
+    <div class="pf-item" data-cat="graduation"><img src="https://images.unsplash.com/photo-1627556704302-624286467c65?w=500&q=80" alt="Graduation"/></div>
+    <div class="pf-item" data-cat="graduation"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&q=80" alt="Graduation cap"/></div>
+    <div class="pf-item" data-cat="graduation"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&q=80" alt="Graduation"/></div>
+    <div class="pf-item" data-cat="graduation"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&q=80" alt="Graduate"/></div>
+    <!-- Couples -->
+    <div class="pf-item" data-cat="couples"><img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=500&q=80" alt="Couple"/></div>
+    <div class="pf-item" data-cat="couples"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80" alt="Couple portrait"/></div>
+    <div class="pf-item" data-cat="couples"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&q=80" alt="Couple"/></div>
+    <div class="pf-item" data-cat="couples"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=500&q=80" alt="Couple golden hour"/></div>
+    <!-- Weddings -->
+    <div class="pf-item" data-cat="weddings"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500&q=80" alt="Wedding"/></div>
+    <div class="pf-item" data-cat="weddings"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500&q=80" alt="Wedding ceremony"/></div>
+    <div class="pf-item" data-cat="weddings"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&q=80" alt="Wedding detail"/></div>
+    <!-- Family -->
+    <div class="pf-item" data-cat="family"><img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?w=500&q=80" alt="Family"/></div>
+    <div class="pf-item" data-cat="family"><img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=500&q=80" alt="Family portrait"/></div>
+    <div class="pf-item" data-cat="family"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Kids"/></div>
+    <!-- Portraits -->
+    <div class="pf-item" data-cat="portraits"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80" alt="Portrait"/></div>
+    <div class="pf-item" data-cat="portraits"><img src="https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=500&q=80" alt="Headshot"/></div>
+    <div class="pf-item" data-cat="portraits"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80" alt="Portrait"/></div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
@@ -926,6 +945,26 @@
       btn.disabled = false;
     }
   }
+</script>
+
+<script>
+  // Portfolio filter
+  const pfBtns = document.querySelectorAll('.pf-btn');
+  const pfItems = document.querySelectorAll('.pf-item');
+  pfBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pfBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      pfItems.forEach(item => {
+        if (filter === 'all' || item.dataset.cat === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
 </script>
 </body>
 </html>
