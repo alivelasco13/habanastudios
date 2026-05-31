@@ -487,6 +487,10 @@
     .pricing-cards { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { font-size: 16px; }
     .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
@@ -868,6 +872,10 @@
             <label>Email</label>
             <input type="email" name="email" placeholder="jane@email.com" required>
           </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(352) 555-1234" required>
         </div>
         <div class="form-group">
           <label>Session Type</label>
